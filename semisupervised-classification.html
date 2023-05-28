@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Regression and classification problems</title>
+  <title>Chapter 5 Semisupervised Classification | Regression and classification problems</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 set in the _output.yml file.
 The HTML output format for this example is bookdown::gitbook,</p>" />
   <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Regression and classification problems" />
+  <meta property="og:title" content="Chapter 5 Semisupervised Classification | Regression and classification problems" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ The HTML output format for this example is bookdown::gitbook,</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Regression and classification problems" />
+  <meta name="twitter:title" content="Chapter 5 Semisupervised Classification | Regression and classification problems" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 set in the _output.yml file.
@@ -36,8 +36,8 @@ The HTML output format for this example is bookdown::gitbook,</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="the-regression-problem.html"/>
+<link rel="prev" href="not-supervised-classification-problem.html"/>
+<link rel="next" href="regresión-no-supervisada.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -82,9 +82,9 @@ The HTML output format for this example is bookdown::gitbook,</p>" />
 <li class="chapter" data-level="2" data-path="the-regression-problem.html"><a href="the-regression-problem.html"><i class="fa fa-check"></i><b>2</b> The Regression Problem</a></li>
 <li class="chapter" data-level="3" data-path="supervised-classification-problem.html"><a href="supervised-classification-problem.html"><i class="fa fa-check"></i><b>3</b> Supervised Classification Problem</a></li>
 <li class="chapter" data-level="4" data-path="not-supervised-classification-problem.html"><a href="not-supervised-classification-problem.html"><i class="fa fa-check"></i><b>4</b> Not Supervised Classification Problem</a></li>
-<li class="chapter" data-level="5" data-path="semi-supervised-classification.html"><a href="semi-supervised-classification.html"><i class="fa fa-check"></i><b>5</b> Semi-supervised Classification</a></li>
-<li class="chapter" data-level="6" data-path="unsupervised-regression.html"><a href="unsupervised-regression.html"><i class="fa fa-check"></i><b>6</b> Unsupervised Regression</a></li>
-<li class="chapter" data-level="7" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i><b>7</b> Bibliography</a></li>
+<li class="chapter" data-level="5" data-path="semisupervised-classification.html"><a href="semisupervised-classification.html"><i class="fa fa-check"></i><b>5</b> Semisupervised Classification</a></li>
+<li class="chapter" data-level="6" data-path="regresión-no-supervisada.html"><a href="regresión-no-supervisada.html"><i class="fa fa-check"></i><b>6</b> ¿Regresión no supervisada?</a></li>
+<li class="chapter" data-level="7" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i><b>7</b> Bibliografía</a></li>
 <li class="divider"></li>
 <li><a href="https://estadistica4all.com" target="blank">Estadistica4all.com</a></li>
 
@@ -105,27 +105,35 @@ The HTML output format for this example is bookdown::gitbook,</p>" />
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Regression and classification problems</h1>
-<p class="author"><em>Fabio Scielzo Ortiz</em></p>
-<p class="date"><em>2023-05-28</em></p>
-</div>
-<div id="introduction" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<center>
-<p><img src="problemas_regre_clasi.jpg" style="width:45.0%" /></p>
-</center>
-<p><br></p>
+<div id="semisupervised-classification" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Semisupervised Classification<a href="semisupervised-classification.html#semisupervised-classification" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Un problema de clasificación semi-supervisada es un problema estadistico que consiste en predecir una variable respuesta <strong>categorica</strong> usando para ello <strong>información</strong> de unas <strong>variables predictoras</strong> y de la propia <strong>respuesta</strong>, pero en este caso la <strong>muestra de la que disponemos sobre la respuesta contiene mucho valores faltantes</strong>.</p>
+<p>El problema de <strong>clasificación semi-supervisada</strong> puede formalizarse como sigue:</p>
+<div class="warning" style="background-color:#F7EBE8; color: #030000; border-left: solid #CA0B0B 7px; border-radius: 3px; size:1px ; padding:0.1em;">
+<p><span></p>
+<p style="margin-left:1em;">
 <ul>
-<li><p><strong>More articles:</strong> <span class="math inline">\(\hspace{0.02cm}\)</span> <a href="https://fabioscielzoortiz.github.io/Estadistica4all.github.io/">Estadistica4all</a></p></li>
-<li><p><strong>Author:</strong> <span class="math inline">\(\hspace{0.02cm}\)</span> <a href="https://estadistica4all.com/creador.html">Fabio Scielzo Ortiz</a></p></li>
-<li><p><strong>If you use this article, please reference it:</strong></p></li>
+<li><p>Tenemos <span class="math inline">\(\hspace{0.02cm}p\hspace{0.02cm}\)</span> predictores <span class="math inline">\(\hspace{0.02cm}(\mathcal{X}_1 ,...,\mathcal{X}_p)\hspace{0.02cm}\)</span> y una variable respuesta <strong>categorica</strong> <span class="math inline">\(\hspace{0.02cm}\mathcal{Y}\hspace{0.02cm}\)</span> sobre la que disponemos ninguna muestra de datos con bastantes valores faltantes.</p></li>
+<li><p>Tenemos una muestra de tamaño <span class="math inline">\(\hspace{0.02cm}n\hspace{0.02cm}\)</span> de los <span class="math inline">\(\hspace{0.02cm}p\hspace{0.02cm}\)</span> predictores <span class="math inline">\(\hspace{0.02cm}\mathcal{X}_1,...,\mathcal{X}_p\hspace{0.02cm}\)</span> y de la respuesta <span class="math inline">\(\mathcal{\hspace{0.01cm}Y\hspace{0.01cm}}\)</span> , pero la muestra de la respuesta contiene muchos valores faltantes.</p>
+<p>Por tanto tenemos la siguiente matriz de datos:</p>
+<p><span class="math display">\[D=[X_1,...,X_p]=\begin{pmatrix}
+  x_{11}&amp;x_{12}&amp;...&amp;x_{1p} &amp; y_1\\
+  x_{21}&amp;x_{22}&amp;...&amp;x_{2p} &amp; y_2\\
+  ... &amp;...&amp; ...&amp;...&amp; ...\\
+  x_{n1}&amp;x_{n2}&amp;...&amp;x_{np} &amp; y_n
+  \end{pmatrix} = \begin{pmatrix}
+  x_{1} &amp; y_1\\
+  x_{2} &amp; y_2 \\
+   ... &amp; ...\\
+   x_{n} &amp; y_n
+  \end{pmatrix}\\\]</span></p>
+<p>Donde: <span class="math inline">\(\hspace{0.15cm}y_i\hspace{0.1cm}\)</span> es un valor faltante, para muchos <span class="math inline">\(\hspace{0.1cm}i\in \lbrace 1,...,n\rbrace\)</span>. <span class="math inline">\(\\\)</span></p></li>
+<li><p>La <strong>solución estadística</strong> al problema de clasificación semi-supervisada pasa por proponer un modelo o algoritmo que sea capaz usar la información muestral disponible <span class="math inline">\(\hspace{0.02cm}D\hspace{0.02cm}\)</span> de los predictores y de la respuesta para predecir los valores de la respuesta para cada vector de observaciones de los predictores que se considere.</p></li>
 </ul>
-<p><span class="math inline">\(\hspace{1.5cm}\)</span> Scielzo Ortiz, Fabio. (2023). Regression and Classification Problems. Estadistica4all.</p>
-<p><br></p>
-<p>We could say that Data Science is the field that tries to solve practical problems using data as primary resource, and mathematics, statistics and programming as auxiliary tools.</p>
-<p>Two of the most important problems that Data Science tries to solve are the ones of regression and classification.</p>
-<p>Next we are going to make a brief theoretical approach to these problems.</p>
+</p>
+</p>
+<p></span></p>
+</div>
 <p><br></p>
 </div>
             </section>
@@ -133,8 +141,8 @@ The HTML output format for this example is bookdown::gitbook,</p>" />
           </div>
         </div>
       </div>
-
-<a href="the-regression-problem.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="not-supervised-classification-problem.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="regresión-no-supervisada.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

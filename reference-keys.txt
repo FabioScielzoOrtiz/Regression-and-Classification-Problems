@@ -1,7 +1,7 @@
-introducción
-problema-de-regresión
-problema-de-clasificación-supervisada
-problema-de-clasificación-no-supervisada
-clasificacion-semi-supervisada
-regresión-no-supervisada
-bibliografía
+introduction
+the-regression-problem
+supervised-classification-problem
+not-supervised-classification-problem
+semi-supervised-classification
+unsupervised-regression
+bibliography
