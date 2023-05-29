@@ -1,7 +1,7 @@
 introduction
 the-regression-problem
 supervised-classification-problem
-not-supervised-classification-problem
+unupervised-classification-problem
 semi-supervised-classification
 unsupervised-regression
 bibliography
